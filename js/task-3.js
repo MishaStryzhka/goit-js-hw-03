@@ -1,7 +1,19 @@
-Напиши функцию findBestEmployee(employees), которая принимает объект сотрудников и возвращает имя самого продуктивного (который выполнил больше всех задач). Сотрудники и кол-во выполненых задач содержатся как свойства объекта в формате "имя":"кол-во задач".
+// Напиши функцию findBestEmployee(employees), которая принимает объект сотрудников и возвращает имя самого продуктивного 
+// (который выполнил больше всех задач). Сотрудники и кол-во выполненых задач содержатся как свойства объекта в формате "имя":"кол-во задач".
 
 const findBestEmployee = function(employees) {
-  // твой код
+    const keys = Object.keys(employees);
+    let nameBestEmployee;
+    let quantityOfCompletedTasks = 0;
+
+    for (const key of keys) {
+        
+        if (employees[key] > quantityOfCompletedTasks) {
+            nameBestEmployee = key;
+            quantityOfCompletedTasks = employees[key];
+        }
+      }
+      return {[nameBestEmployee]: quantityOfCompletedTasks};
 };
 
 /*
